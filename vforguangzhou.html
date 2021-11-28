@@ -8,27 +8,28 @@
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
 </head>
 <body>
-    <div class="app">
+    <div id="app">
 {{message}}
-{{school.name}}
 <ul>
-    <li> campus[0]</li>
+    <li v-for="(it,index) in arr">
+        {{index+1}}这是 :{{it}}</li>
+</ul>
+<ul>
+    <li v-for="item in campus">
+        这是 :{{item}}</li>
 </ul>
     </div>
     <script>
         var app=new Vue({
-        el="#app",
+        el:"#app",
         data:{
             message:"first",
-            school:{
-                name:"next",
-                type:"远，近"
-        },
+        arr:["北京","上海"],
         campus:["广州","2","3","4"]
     
     
     }}
-        );
+        )
     </script>
 </body>
 </html>
